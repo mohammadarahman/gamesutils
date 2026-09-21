@@ -9,7 +9,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 OUTPUT_JSON = os.path.join(SCRIPT_DIR, "triage_email_data.json")
 #OUTPUT_HTML = os.path.join(SCRIPT_DIR, "triage_email_dashboard.html")
 soup = None  # Global HTML element, updated per file
-raw_subject_cache = None  # Cache raw subject for parsers
+origsubject = None  # Cache original subject for parsers
 
 def convert_datetime(date_string):
     if not date_string:
@@ -40,7 +40,6 @@ def convert_datetime(date_string):
         month_str = dt.strftime("%b").upper()
         time_str = dt.strftime("%H:%M:%S")
         formatted = f"{day_str}{month_str} {time_str}"
-        dprint(f"[DEBUG] Converted: '{date_string}' -> '{formatted}'")
         return formatted
     except Exception as e:
         dprint(f"[ERROR] Error parsing date '{date_string}': {e}")
@@ -64,7 +63,7 @@ def cleanupsubject(subject):
     elif (subject.startswith("alertrouter: critical")):
         subject = "alertrouter: critical"
     return subject, ""
-def getdata_p(rgxstr, all=True):
+def getdata_p(rgxstr, all=True,getp=False):
     global soup
     if not soup:
         return ""
@@ -74,6 +73,8 @@ def getdata_p(rgxstr, all=True):
         text = p_tag.get_text(" ", strip=True)
         match = re.search(rgxstr, text, re.IGNORECASE)
         if match:
+            if getp:
+                return p_tag
             if match.groups():
                 # If there are groups, join them with space
                 item = " ".join(str(g) for g in match.groups() if g)
@@ -95,19 +96,37 @@ def getdata_p(rgxstr, all=True):
         results = unique_results
         return "<br>".join(results) if all else results[0]
     return ""
-def getdata_tbl1(cols, rgxstr, red=True, compress=True):
+def getdata_tbl(rgxstr, red=True, id='table1'):
+    """
+    Extract data from table rows based on column regex matching.
+    
+    Args:
+        rgxstr: list of tuples [(col_idx, regex_pattern), ...] where:
+                - col_idx: zero-based column index to search
+                - regex_pattern: regex pattern to match
+        red: if True, only process rows with class="colorred"
+        id: table id to search for (default: 'table1')
+    
+    Returns:
+        list of lists, where each inner list has same size as rgxstr.
+        Each inner list contains matched results for one row.
+        Example: rgxstr=[(0,r'(\S+)'), (3,r'(\S+)')] 
+                returns [['val1', 'val2'], ['val3', 'val4'], ...]
+    """
     global soup
     if not soup:
-        return ""
+        return []
     
-    # Find table with id="table1"
-    table = soup.find('table', {'id': 'table1'})
+    # Validate rgxstr is a list of tuples
+    if not isinstance(rgxstr, list):
+        return []
+    
+    # Find table with id
+    table = soup.find('table', {'id': id})
     if not table:
-        return ""
+        return []
     
     results = []
-    
-    # Get all rows
     rows = table.find_all('tr')
     
     for row in rows:
@@ -120,100 +139,41 @@ def getdata_tbl1(cols, rgxstr, red=True, compress=True):
                 continue
         
         # Get cells in this row
-        cells = row.find_all(['td', 'th'])
-        
-        # Skip rows where first cell is in skip list (easily extensible)
-        skip_cells = ['itotools']
-        skip_cnt = 0 
-        if cells and cells[0].get_text(strip=True) in skip_cells:
-            skip_cnt += 1
+        cells = row.find_all('td')
+        if not cells:
             continue
-        dprint(f"[DEBUG] noSkipping row with first cell: {cells[0].get_text(strip=True)}")
-        # Extract text from specified columns
-        col_texts = []
-        for col_idx in cols:
-            if col_idx < len(cells):
-                col_texts.append(cells[col_idx].get_text(strip=True))
-        
-        # Combine texts from columns
-        combined_text = " ".join(col_texts)
-        
-        # Apply regex and extract all groups
-        match = re.search(rgxstr, combined_text, re.IGNORECASE)
-        if match:
-            # Get all groups and filter out None values
-            groups = [str(g) for g in match.groups() if g]
-            if groups:
-                # Join groups with space and add to results
-                results.append(" ".join(groups))
+        # Process each (col_idx, regex_pattern) tuple and collect results for this row
+        row_results = []
+        for col_idx, regex_pattern in rgxstr:
+            # Check if column index is valid
+            if col_idx >= len(cells):
+                row_results.append("")
+                continue
+            
+            # Get text from specified column
+            col_text = cells[col_idx].get_text(strip=True)
+            
+            # Apply regex
+            match = re.search(regex_pattern, col_text, re.IGNORECASE)
+            if match:
+                # If there are groups, join them with space
+                if match.groups():
+                    groups = [str(g) for g in match.groups() if g]
+                    # Join multiple groups with space
+                    row_results.append(" ".join(groups))
+                else:
+                    # If no groups, use entire match
+                    row_results.append(match.group(0))
             else:
-                # If no groups, use entire match
-                results.append(match.group(0))
-    if skip_cnt > 0 and not results:
-        return " ".join(skip_cells)
+                # No match for this column
+                row_results.append("")
         
-    print(results)
-    # If compress=True, remove duplicates while preserving order
-    if compress:
-        seen = set()
-        unique_results = []
-        for item in results:
-            if item not in seen:
-                seen.add(item)
-                unique_results.append(item)
-        results = unique_results
-    
-    # Return results joined with space
-    return " ".join(results) if results else ""
+        # Add this row's results as a list
+        results.append(row_results)
+    return results
     
 
-    
-def gettabledatas(cols, headertext, red=True):
-    """
-    Parse table rows from HTML and return a list of columns.
-    Args:
-        soup (html soup) 
-        cols (list[int]): zero-based column indexes to extract
-        headertext (str): text that must be present in the first row of the table
-        red (bool): if True, include only rows with red text
-    Returns:
-        list[list[str]]: list of columns, each column containing values from matching rows
-    """
-    global soup
-    result = [[] for _ in cols]
-    for table in soup.find_all("table"):
-        rows = table.find_all("tr")
-        if not rows:
-            continue
-        # First row is the header row
-        header_cells = rows[0].find_all(["td", "th"])
-        header_texts = [cell.get_text(" ", strip=True) for cell in header_cells]
-        # Skip table if required header text is not found in first row
-        if not any(headertext.lower() in h.lower() for h in header_texts):
-            continue
-        for row in rows[1:]:
-            cells = row.find_all(["td", "th"])
-            if not cells:
-                continue
-            if red:
-                has_red = False
-                for cell in cells:
-                    spans = cell.find_all("span")
-                    for span in spans:
-                        style = span.get("style", "").replace(" ", "").lower()
-                        if "color:red" in style:
-                            has_red = True
-                            break
-                    if has_red:
-                        break
-                if not has_red:
-                    continue
-            for idx, col in enumerate(cols):
-                if col < len(cells):
-                    result[idx].append(cells[col].get_text(" ", strip=True))
-                else:
-                    result[idx].append("")
-    return result
+
     
 def parsepath(path, segments):
     if not isinstance(path, str) or not path.strip():
@@ -225,9 +185,6 @@ def parsepath(path, segments):
 # ----------------------------
 # File helpers
 # ----------------------------
-def load_input_json(path):
-    with open(path, "r", encoding="utf-16") as f:
-        return json.load(f)
 def load_html_file(html_path):
     if not os.path.exists(html_path):
         dprint(f"[WARN] Missing HTML file: {html_path}")
@@ -268,95 +225,45 @@ def get_common_links():
     if not soup:
         return out
     text_lines = soup.get_text("\n", strip=True)
-
     match = re.search(r"RFC:\s*(https?://\S+)", text_lines, re.IGNORECASE)
     if match:
         out["rfc"] = match.group(1).strip()
-    else:
-        el = soup.select_one(".rfc")
-        out["rfc"] = el.get_text(" ", strip=True) if el else ""
 
     match = re.search(r"Dashboard:\s*(https?://\S+)", text_lines, re.IGNORECASE)
     if match:
         out["dashboard"] = match.group(1).strip()
-    else:
-        el = soup.select_one(".dashboard")
-        out["dashboard"] = el.get_text(" ", strip=True) if el else ""
-
     return out
 
-
-def parse_base():
-    return {}
-
-
-
-
-def parse_ttd_ref_vol_fill():
-    global soup
-    text = soup.get_text(" ", strip=True)
-    match = re.search(r"Summary: (\S+)\s+volume\s+on\s+(\S+)\s+is\s+(\S+)\s+full", text, re.IGNORECASE)
-    if match:
-        return {
-            "info2": "<b>" + match.group(2) + "</b> Vol: " + match.group(1),
-            "info1": match.group(3),
-        }
-    dprint("TTDrefVolFill parser: no match")
-    return {}
-
-
-def parse_critical_its():
-    global soup, raw_subject_cache
-    dprint(f"[PARSER] parse_critical_its")
-    text = soup.get_text(" ", strip=True)
-    out = {"path": "--"}
-    match = re.search(
-        r"Summary:\s*ITS\s*ticket\s*(\d+)\s*needs\s*your\s*attention:\s*(.+?)(?=\s+rfc:|\s+dashboard:|$)",
-        text,
-        re.IGNORECASE,
-    )
-    if match:
-        out.update({
-            "info1": match.group(1),
-            "info2": match.group(2).strip(),
-        })
-    else:
-        dprint("CriticalITS parser: no match")
-
-    matches = re.findall(r"rfc:\s*(\S+)", text, re.IGNORECASE | re.MULTILINE)
-    if matches:
-        out["path"] = "<br> ".join(f"<a href={its}>{its}</a>" for its in matches)
-    return out
 
 def parse_critical():
-    global soup, raw_subject_cache
+    global soup, origsubject
     dprint(f"[PARSER] parse_critical")
     text = soup.get_text(" ", strip=True)
     out = {"path": "--"}
-    raw_subject = raw_subject_cache
-
+    
+    dprint(f"[DEBUG] raw_subject: {origsubject}")
     # Shared: build Info1 label from raw subject, linked to RFC
     rfc_match = re.search(r"rfc:\s*(https?://\S+)", text, re.IGNORECASE)
     rfc_link = rfc_match.group(1).strip() if rfc_match else ""
-    subj_match = re.search(r"AlertRouter: CRITICAL (.*) is firing", raw_subject, re.IGNORECASE)
-    label = subj_match.group(1).strip() if subj_match else raw_subject
+    subj_match = re.search(r"AlertRouter: CRITICAL (.*) is firing", origsubject, re.IGNORECASE)
+    label = subj_match.group(1).strip() if subj_match else origsubject
     if label:
         out["info1"] = f'<a href="{rfc_link}">{label}</a>' if rfc_link else label
 
     # Per-type: fill server (Info2) and path based on what the subject contains
-    if "Emergency rampdown" in raw_subject:
+    if "Emergency rampdown" in origsubject:
         match = re.search(r"description:\s*(\S+)", text, re.IGNORECASE)
         if match:
             desc_path = match.group(1).strip()
             parts = [p for p in desc_path.replace("\\", "/").split("/") if p]
             out["info2"] = parsepath(desc_path, [1])[0]
             out["path"] = "/" + "/".join(parts[:-1]) if len(parts) > 1 else desc_path
-    elif "MultipleClientsDownNetbatchClass" in raw_subject:
+    elif "MultipleClientsDownNetbatchClass" in origsubject:
         # description: More than 50% of SLES12_short in pool orto_e are not available.
         matches = re.findall(r"description: More than \S+ of (\S+)\s+in pool\s+(\S+)\s+are not available", text, re.IGNORECASE)
         if matches:
             out["path"] = "<br>".join(f"{cls} - {pool}" for cls, pool in matches)
-    elif "MLCWorkerNodeSwapping" in raw_subject:
+    elif "MLCWorkerNodeSwapping" in origsubject:
         match = re.search(r"description:\s*(\S+):\s*Swap usage is above (.+)", text, re.IGNORECASE)
         if match:
             out["info2"] = match.group(1).strip()
@@ -366,7 +273,7 @@ def parse_critical():
             if match:
                 out["info2"] = match.group(1).strip()
     #one condition for subject containing NetbatchQOS is firing
-    elif "NetbatchQOS is firing" in raw_subject:
+    elif "NetbatchQOS is firing" in origsubject:
         matches = re.findall(r"Time\s+to\s+do\s+nbstatus\s+jobs\s+--target\s+(\S+)\s+is\s+high,\s+with\s+a\s+value\s+of\s+(\d+)\s+secs", text, re.IGNORECASE)
         if matches:
             out["info2"] = ", ".join(f"{target} - {value} secs" for target, value in matches)
@@ -377,124 +284,95 @@ def parse_critical():
 
 
 
-def parse_emergency_rampdown():
-    global soup
-    dprint(f"[PARSER] parse_emergency_rampdown")
-    text = soup.get_text(" ", strip=True)
-    out = {"info1": "", "info2": "none"}
-    match = re.search(r"job_path:\s*(\S+)", text, re.IGNORECASE)
-    if match:
-        out["path"] = match.group(1)
-    return out
-
-
-def parse_ttd_netapp_aggr():
-    global soup
-    dprint(f"[PARSER] parse_ttd_netapp_aggr")
-    text = soup.get_text(" ", strip=True)
-    match = re.search(r"Summary:\s+Aggregate\s+(\S+)\s+is\s+at\s+(\S+)%", text, re.IGNORECASE)
-    if match:
-        return {
-            "info2": match.group(1),
-            "info1": match.group(2) + "%",
-        }
-    dprint("TTDNetAppAggr parser: no match")
-    return {}
-
-
-def parse_aggr_will_fill():
-    global soup
-    dprint(f"[PARSER] parse_aggr_will_fill")
-    text = soup.get_text(" ", strip=True)
-    match = re.search(r"Summary:\s+(\S+)\s+will\s+fill\s+in\s+less\s+than\s+(\d+)\s+days", text, re.IGNORECASE)
-    if match:
-        return {
-            "info2": match.group(1),
-            "info1": match.group(2) + " day",
-        }
-    dprint("AggrWillFill parser: no match")
-    return {}
-
-
-def parse_high_nb_job_wait():
-    global soup
-    dprint(f"[PARSER] parse_high_nb_job_wait")
-    text = soup.get_text("\n", strip=True)
-    out = {}
-
-    descriptions = re.findall(
-        r"description:\s*(.*?)(?=\n\s*(?:description:|rfc:|dashboard:|-{5,}|$))",
-        text,
-        re.IGNORECASE | re.DOTALL,
-    )
-
-    classes = []
-    pool_paths = []
-
-    for raw_desc in descriptions:
-        desc = " ".join(raw_desc.split())
-        if not desc:
-            continue
-
-        class_match = re.search(r"\bclass\s+(.+?)\s+for\s+last\b", desc, re.IGNORECASE)
-        pool_match = re.search(r"\bin\s+(\S+)\s+in\s+qslot\b", desc, re.IGNORECASE)
-        qslot_match = re.search(r"\bin\s+qslot\s+(\S+)", desc, re.IGNORECASE)
-
-        if class_match:
-            classes.append(class_match.group(1).strip())
-
-        pool = pool_match.group(1).strip() if pool_match else ""
-        qslot = qslot_match.group(1).strip() if qslot_match else ""
-        if pool or qslot:
-            pool_paths.append(f"{pool} {qslot}".strip())
-
-    if classes:
-        out["info1"] = "<br>".join(dict.fromkeys(classes))
-    if pool_paths:
-        out["info2"] = "<br>".join(dict.fromkeys(pool_paths))
-
-    if not out:
-        dprint("HighNBJobWait parser: no description match")
-
-    return out
-    
-def parse_netbatchqos():
-    global soup
-    dprint(f"[PARSER] parse_netbatchqos")
-    text = soup.get_text(" ", strip=True)
-    out = {}
-    matches = re.findall(r"Time to do nbstatus jobs --target (\S+) is high, with a value of (\d+) ", text, re.IGNORECASE)
-    if matches:
-        out["info2"] = ", ".join(f"{target} - {value}" for target, value in matches)
-    else:
-        dprint("NetBatchQos parser: no match")
-
-    return out
-
 def parse_swapping_compute():
     global soup
     dprint(f"[PARSER] parse_swapping_compute")
     text = soup.get_text(" ", strip=True)
     out = {}
-
+    rgxstr = [[0,r'(\S+)'],[7,r'(\d+)'],[9,r'slots=(\d+),slots_per_host='],[11,"\/hnfs\/(t[^\/]+)\/vol\/([^\/]+)\/([^\/]+)\/([^\/]+)\/(?:(?:[^\/]+\/){3}([^\/]+))?"]]
+    table_results = getdata_tbl(rgxstr=rgxstr, red=True)
+    
+    dprint(f"[PARSER] parse_swapping_compute - table_results: {table_results}")
+    
+    # Process table_results: if first item is not "itotools", combine row with space
+    # For multiple rows, combine with <br> and remove duplicates
+    if table_results:
+        processed_rows = []
+        for row in table_results:
+            if row and row[0] != "itotools":
+                # Combine entire row with space, filtering out None/empty values
+                row_str = " ".join(filter(None, [str(item) if item else "" for item in row]))
+                if row_str:  # Only add if not empty
+                    processed_rows.append(row_str)
+        
+        # Remove duplicates while preserving order
+        if processed_rows:
+            unique_rows = []
+            seen = set()
+            for row in processed_rows:
+                if row not in seen:
+                    unique_rows.append(row)
+                    seen.add(row)
+            out["info2"] = "<br>".join(unique_rows)
+        else:
+            out["info2"] = ""
+    else:
+        out["info2"] = ""
+    
     rgxstr1 = r"machine\s+(\S+)\s+is\s+swapping\s+at\s*(\S+)\s*"
-    rgxstr2 = r''
+    
     out["info1"] = getdata_p(rgxstr1, all=False)
-    out["info2"] = getdata_tbl1(cols=[11], rgxstr=rgxstr2, red=True, compress=True)
-
-
-
     return out
 
-def parse_license_low_availability():
-    global soup
-    dprint(f"[PARSER] parse_license_low_availability")
-    text = soup.get_text(" ", strip=True)
-    out = {}
-    match = re.search(r"license\s+low\s+availability\s+on\s+(\s+)", text, re.IGNORECASE)
-    if match:
-        out["info2"] = match.group(1)
 
+
+def parse_tcs_storage():
+    """
+    Parser for TCS Storage alerts.
+    Extracts:
+    - rfc: <a> tag inside <p> element matching "To continue troubleshooting follow:"
+    - dashboard: links after "Useful Links:"
+    - path: first column from table id=table1
+    - info1: second column from table id=table1
+    """
+    global soup
+    dprint(f"[PARSER] parse_tcs_storage")
+    out = {}
+    
+    # Extract RFC: find <p> matching "To continue troubleshooting follow:", then find <a> tag inside
+    rfc_p = getdata_p(r"To continue troubleshooting follow:", all=False, getp=True)
+    if rfc_p:
+        rfc_link = rfc_p.find("a")
+        if rfc_link:
+            out["rfc"] = rfc_link.get("href", rfc_link.get_text(strip=True))
+            dprint(f"[PARSER] RFC: {out['rfc']}")
+    
+    # Extract Dashboard links after "Useful Links:"
+    dashboard_match = getdata_p(r"Useful Links:", all=False, getp=True)
+    if dashboard_match:
+        dashboard_links = dashboard_match.find_all("a")
+        if dashboard_links:
+            out["dashboard"] = dashboard_links[0].get("href", dashboard_links[0].get_text(strip=True))
+            dprint(f"[PARSER] Dashboard: {out['dashboard']}")
+
+    
+    # Extract path (column 0) and info1 (column 1) from table id=table1
+    table_data = getdata_tbl(rgxstr=[[0, r'(\S+)'], [1, r'(\S+)']], red=False, id='table1')
+    
+    if table_data and len(table_data) > 0:
+        col0_items = []
+        col1_items = []
+        for row in table_data:
+            if len(row) > 0 and row[0]:
+                col0_items.append(row[0])
+            if len(row) > 1 and row[1]:
+                col1_items.append(row[1])
+        
+        if col0_items:
+            out["path"] = "<br>".join(col0_items)
+        if col1_items:
+            out["info2"] = "<br>".join(col1_items)
+    
     return out
 
 def subject_startswith(prefix):
@@ -504,15 +382,16 @@ def subject_startswith(prefix):
 def subject_contains(fragment):
     return lambda subject: fragment in subject
 
-def parse_with_regex_lists( ):
+def parse_with_regex_lists():
     """
     Default parser with two lists of regex patterns.
     Tries each regex in order, stops at first match.
     Only searches in <p> elements like getdata_p().
     """
-
-    info1_regexes = [r'average response time of (\S+ \S+)', r'summary:\s*(\S+) from (\S+) will fill in']
-    info2_regexes = [r'nbstatus jobs --target (\S+) is high',r'sname\s*: (\S+)']
+    dprint(f"[PARSER] parse_with_regex_lists - default")
+    info1_regexes = [r'description: (\d+) waiting netbatch jobs in (\S+) in qslot \S+ and class SLES15_LARGEMEM for last \d+ \S+',r'Aggregate (\S+) is at \S+ full',r'\S+ volume on (\S+) is \S+ full',r'average response time of (\S+ \S+)', r'summary:\s*(\S+) from (\S+) will fill in',r'value of (\S+ \S+)']
+    info2_regexes = [r'description: \d+ waiting netbatch jobs in \S+ in qslot \S+ and class SLES15_LARGEMEM for last (\d+ \S+)',r'(\S+) will fill in less than (\d+ days)',r'Aggregate \S+ is at (\S+) full',r'(\S+) volume on \S+ is (\S+) full', r'Slow average AD response of (\d+)[\.\d]* seconds in to',r'nbstatus jobs --target (\S+) is high',r'sname\s*: (\S+)', r'Feature: (\S+)']
+    path_regexes = [r'description: \d+ waiting netbatch jobs in \S+ in qslot (\S+) and class SLES15_LARGEMEM for last \d+ \S+',r'job_path:\s*(\S+)']
     info1_result = ""
     # Try each regex in info1_regexes, stop at first match
     for rgx in info1_regexes:
@@ -525,38 +404,39 @@ def parse_with_regex_lists( ):
     # Try each regex in info2_regexes, stop at first match
     for rgx in info2_regexes:
         result = getdata_p(rgx, all=True)  # all=False stops at first match
-        dprint(f"[DEBUG] Trying regex '{rgx}' got result: {result}")
+        #dprint(f"[DEBUG] Trying regex '{rgx}' got result: {result}")
         if result:
             info2_result = result
             break
-    
-    return {
+    path_result = ""
+    for rgx in path_regexes:
+        path_match = getdata_p(rgx, all=True)
+        if path_match:
+            path_result = path_match
+            break
+        
+    result = {
         "info1": info1_result,
         "info2": info2_result,
+        "path": path_result
     }
+    return result
 
 PARSER_RULES = [
     (subject_startswith("alertrouter: critical"), parse_critical),
-    (subject_startswith("alertrouter: warning emergency rampdown is firing"), parse_emergency_rampdown),
     (subject_startswith("swapping compute"), parse_swapping_compute),
-    (subject_startswith("alertrouter: warning ttd_netapp_aggr_full is firing"), parse_ttd_netapp_aggr),
-    (subject_startswith("alertrouter: warning ito_aggr_will_fill_in_x_days is firing"), parse_aggr_will_fill),
-    (subject_startswith("alertrouter: warning ttd_ref_volume_full is firing"), parse_ttd_ref_vol_fill),
-    #    (subject_startswith("alertrouter: warning ito_vol_will_fill_in_x_days is firing"), parse_ito_vol_fill),
-    (subject_startswith("alertrouter: critical its alert"), parse_critical_its),
-    (subject_startswith("alertrouter: warning licenselowavailability is firing"), parse_license_low_availability),
-    #(subject_startswith("alertrouter: warning computehighload is firing"), parse_computehighload),
-    #(subject_startswith("alertrouter: warning netbatchqos is firing"), parse_netbatchqos),
-    (subject_contains("highnbjobwaitcountbyclass"), parse_high_nb_job_wait),
+    (subject_contains("nap015: troubleshoot filer slowness"), parse_tcs_storage),  # TCS Storage alerts
+    #(subject_contains("highnbjobwaitcountbyclass"), parse_high_nb_job_wait),
     (lambda subject: True, parse_with_regex_lists),  # Default catch-all
 ]
 
 
 def parse_email_by_subject(subject, html, raw_subject=None):
-    global soup, raw_subject_cache
+    global soup, origsubject
     soup = BeautifulSoup(html, "html.parser")
-    raw_subject_cache = raw_subject or subject
-    match_subject = raw_subject_cache
+    origsubject = raw_subject or subject
+    match_subject = origsubject.lower()
+    #dprint(f"[DEBUG] parse_email_by_subject: subject (for output)='{subject}', origsubject (for matching)='{match_subject}'")
     parsed = default_parse_result()
     parsed.update(get_common_links())
 
@@ -578,7 +458,7 @@ def load_existing_json(path):
     return {}
 def build_combined_data(allfiles):
     # 1. Load existing data
-    global soup
+    global soup,origsubject
     combined_data = load_existing_json(OUTPUT_JSON)
     
     for file in allfiles:
@@ -588,22 +468,22 @@ def build_combined_data(allfiles):
         
         # Extract subject from HTML <p class="subject">
         html = load_html_file(htmlfile)
-        dprint(f"[DEBUG] Loaded HTML: {htmlfile[:60]}... (length: {len(html) if html else 0})")
+        #dprint(f"[DEBUG] Loaded HTML: {htmlfile[:60]}... (length: {len(html) if html else 0})")
         
-        subject = ""
+        
         if html:
             soup = BeautifulSoup(html, 'html.parser')
             elem = soup.select_one('p.subject')
             if elem:
-                subject = elem.get_text(strip=True).replace('Subject:', '').strip()
-                dprint(f"[DEBUG] Subject extracted: {subject[:60]}...")
+                origsubject = elem.get_text(strip=True).replace('Subject:', '').strip()
+                dprint(f"[DEBUG] Subject extracted: {origsubject[:60]}...")
             else:
                 dprint(f"[WARNING] No <p class='subject'> found in HTML")
         else:
             dprint(f"[ERROR] Failed to load HTML file: {htmlfile}")
         
-        subject, server = cleanupsubject(subject)
-        dprint(f"[INFO] Processing HTML: {htmlfile} | Subject: {subject[:50] if subject else 'EMPTY'} | Server: {server}")
+        subject, server = cleanupsubject(origsubject)
+        dprint(f"[INFO] Processing HTML: {htmlfile} | Subject: {subject[:50] if subject else 'EMPTY'} ")
         # Ensure subject key exists
         if subject not in combined_data:
             combined_data[subject] = {
@@ -614,7 +494,6 @@ def build_combined_data(allfiles):
         # Extract timestamp from HTML <p class="timestamp">
         timestamp_elem = soup.select_one('p.timestamp') if soup else None
         datetime_str = timestamp_elem.get_text(strip=True).replace('Sent:', '').strip() if timestamp_elem else ""
-        dprint(f"[DEBUG] Timestamp: {datetime_str if datetime_str else 'NOT FOUND'}")
         
         # Prepare new data from parser
         new_ind_dat = {
@@ -625,8 +504,7 @@ def build_combined_data(allfiles):
         }
         
         if html:
-            dprint(f"[DEBUG] Parsing email content...")
-            parsed = parse_email_by_subject(subject, html, raw_subject=subject)
+            parsed = parse_email_by_subject(subject, html, raw_subject=origsubject)
             new_ind_dat.update({
                 "info1": parsed["info1"],
                 "info2": parsed["info2"],
@@ -663,7 +541,7 @@ def build_combined_data(allfiles):
             # Restore status if it was previously set
             if existing_status:
                 existing_entry["status"] = existing_status
-            dprint(f"[DEBUG] Updated existing entry for ID: {item_id}")
+            #dprint(f"[DEBUG] Updated existing entry for ID: {item_id}")
         else:
             # Add new entry
             combined_data[subject]["ind_dats"][item_id] = new_ind_dat

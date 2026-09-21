@@ -394,14 +394,13 @@ def parse_email_html(html_file):
     try:
         with open(html_file, 'r', encoding=encoding, errors='ignore') as f:
             html_content = f.read()
-        dprint(f"[DEBUG] File read: {len(html_content)} bytes (encoding: {encoding})")
+        #dprint(f"[DEBUG] File read: {len(html_content)} bytes (encoding: {encoding})")
     except Exception as e:
         print(f"[ERROR] Failed to read file: {e}")
         return "", []
     
     # Create soup
     soup = BeautifulSoup(html_content, 'html.parser')
-    dprint(f"[DEBUG] Soup created")
     
     # Check if already processed (HTML title starts with *)
     title_tag = soup.find('title')
