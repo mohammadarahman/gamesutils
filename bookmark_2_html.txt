@@ -48,6 +48,9 @@ Intel
         AutoOps new request,https://autoopswebservice.swissautoops.intel.com
         airflow,http://tsciwrkr06.sc.intel.com:8081
         ttdreports apis,https://torimetpweb.to.intel.com/ttdreports/docs
+        netbatch job remove,https://autoopswebservice.swissautoops.intel.com/domains/HPC/flows/nb_job_remove
+        preometheus,http://tsciprom10.sc.intel.com:9090/
+        powerapps,https://apps.powerapps.com
     info
 
         intel proxy,https://intelpedia.intel.com/Proxy_at_Intel#npm_.28node.js.29
@@ -179,11 +182,13 @@ Tools
 ToolsAI
 
     LLM
-
+        consensus,https://consensus.app
         prompt ai,https://www.blackbox.ai/
-
+        clipzap,https://www.clipzap.ai
         Claude,https://claude.ai/
-
+        dictanote,https://dictanote.co/pro/
+        designarena,https://www.designarena.ai
+        arena ai,https://arena.ai
     Misc
 
         multi AI, https://www.yeschat.ai/

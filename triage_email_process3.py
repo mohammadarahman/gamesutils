@@ -285,19 +285,24 @@ def parse_critical():
 
 
 def parse_swapping_compute():
-    global soup
+    global soup, origsubject
     dprint(f"[PARSER] parse_swapping_compute")
     text = soup.get_text(" ", strip=True)
     out = {}
-    rgxstr = [[0,r'(\S+)'],[7,r'(\d+)'],[9,r'slots=(\d+),slots_per_host='],[11,"\/hnfs\/(t[^\/]+)\/vol\/([^\/]+)\/([^\/]+)\/([^\/]+)\/(?:(?:[^\/]+\/){3}([^\/]+))?"]]
-    table_results = getdata_tbl(rgxstr=rgxstr, red=True)
+    processed_rows = []
+    if (origsubject.startswith("Swapping Compute General Batch is firing")):
+        #dprint(f"[PARSER] parse_swapping_compute - subject starts with 'Swapping Compute'")
+        rgxstr = [[0,r'(\S+)'],[4,"\/hnfs\/(t[^\/]+)\/vol\/([^\/]+)\/([^\/]+)\/([^\/]+)\/(?:(?:[^\/]+\/){3}([^\/]+))?"]]
+        table_results = getdata_tbl(rgxstr=rgxstr, red=False)
+        #dprint(f"[PARSER] parse_swapping_compute - table_results: {table_results}")
+        
+    elif (origsubject.startswith("Swapping Compute Special is firing")):
     
-    dprint(f"[PARSER] parse_swapping_compute - table_results: {table_results}")
-    
-    # Process table_results: if first item is not "itotools", combine row with space
-    # For multiple rows, combine with <br> and remove duplicates
+        rgxstr = [[0,r'(\S+)'],[7,r'(\d+)'],[9,r'slots=(\d+),slots_per_host='],[11,"\/hnfs\/(t[^\/]+)\/vol\/([^\/]+)\/([^\/]+)\/([^\/]+)\/(?:(?:[^\/]+\/){3}([^\/]+))?"]]
+        table_results = getdata_tbl(rgxstr=rgxstr, red=True)
+        # Process table_results: if first item is not "itotools", combine row with space
+        # For multiple rows, combine with <br> and remove duplicates
     if table_results:
-        processed_rows = []
         for row in table_results:
             if row and row[0] != "itotools":
                 # Combine entire row with space, filtering out None/empty values
@@ -306,18 +311,14 @@ def parse_swapping_compute():
                     processed_rows.append(row_str)
         
         # Remove duplicates while preserving order
-        if processed_rows:
-            unique_rows = []
-            seen = set()
-            for row in processed_rows:
-                if row not in seen:
-                    unique_rows.append(row)
-                    seen.add(row)
-            out["info2"] = "<br>".join(unique_rows)
-        else:
-            out["info2"] = ""
-    else:
-        out["info2"] = ""
+    if processed_rows:
+        unique_rows = []
+        seen = set()
+        for row in processed_rows:
+            if row not in seen:
+                unique_rows.append(row)
+                seen.add(row)
+        out["info2"] = "<br>".join(unique_rows)
     
     rgxstr1 = r"machine\s+(\S+)\s+is\s+swapping\s+at\s*(\S+)\s*"
     
@@ -426,7 +427,6 @@ PARSER_RULES = [
     (subject_startswith("alertrouter: critical"), parse_critical),
     (subject_startswith("swapping compute"), parse_swapping_compute),
     (subject_contains("nap015: troubleshoot filer slowness"), parse_tcs_storage),  # TCS Storage alerts
-    #(subject_contains("highnbjobwaitcountbyclass"), parse_high_nb_job_wait),
     (lambda subject: True, parse_with_regex_lists),  # Default catch-all
 ]
 
@@ -445,7 +445,7 @@ def parse_email_by_subject(subject, html, raw_subject=None):
             parsed.update(parser_func())
             return parsed
 
-    parsed.update(parse_base())
+    #parsed.update(parse_base())
     return parsed
 def load_existing_json(path):
     """Loads existing data to preserve manual status/notes."""
@@ -563,5 +563,4 @@ def main():
     dprint(f"[OK] Merged data saved to: {OUTPUT_JSON}")
 
 if __name__=="__main__":
-    #rewrite_email()
     main()
