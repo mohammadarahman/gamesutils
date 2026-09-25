@@ -9,7 +9,6 @@ from routes_triage_email import configure_routes_triage_email
 from flask_socketio import SocketIO, emit
 from routes_stocks import configure_routes_stocks
 
-
 import random
 
 

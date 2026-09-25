@@ -1,0 +1,58 @@
+[
+  {
+    "symbol": "DAL",
+    "name": "Delta Air Lines, Inc."
+  },
+  {
+    "symbol": "MCD",
+    "name": "McDonald's Corporation"
+  },
+  {
+    "symbol": "AMZN",
+    "name": "Amazon.com, Inc."
+  },
+  {
+    "symbol": "INTC",
+    "name": "Intel Corporation"
+  },
+  {
+    "symbol": "HD",
+    "name": "The Home Depot, Inc."
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA Corporation"
+  },
+  {
+    "symbol": "PEP",
+    "name": "PepsiCo, Inc."
+  },
+  {
+    "symbol": "NFLX",
+    "name": "Netflix, Inc."
+  },
+  {
+    "symbol": "UBER",
+    "name": "Uber Technologies, Inc."
+  },
+  {
+    "symbol": "PYPL",
+    "name": "PayPal Holdings, Inc."
+  },
+  {
+    "symbol": "BA",
+    "name": "The Boeing Company"
+  },
+  {
+    "symbol": "LOW",
+    "name": "Lowe's Companies, Inc."
+  },
+  {
+    "symbol": "META",
+    "name": "Meta Platforms, Inc."
+  },
+  {
+    "symbol": "MSFT",
+    "name": "Microsoft Corporation"
+  }
+]

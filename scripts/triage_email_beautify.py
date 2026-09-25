@@ -27,7 +27,7 @@ def apply_formatting(content: str) -> str:
             line
         )
         # Rule 2: Make http/https URLs clickable links
-        line = url_re.sub(r'<a href="\1">\1</a>', line)
+        line = url_re.sub(r'<a href="\g<1>">\g<1></a>', line)
         # Rule 3: Bold first 1-3 words if they end with ':'
         line = re.sub(r'^(\s*)((\w+\s){0,2}\w+:)(\s)', r'\1<b>\2</b>\4', line)
         # Rule 4: Replace 4 or more dashes with a horizontal ruler
@@ -38,11 +38,13 @@ def extract_body(input_file: str, output_file: str) -> None:
     # Read file as raw bytes, decode as ASCII, drop all non-ASCII bytes
     with open(input_file, "rb") as f:
         raw = f.read()
-    # Decode as ASCII ignoring non-ASCII bytes, then remove null characters
-    html = raw.decode("ascii", errors="ignore").replace("\x00", "")
-    # Strip any remaining non-printable control characters (keep \t \n \r and space-~)
-    html = re.sub(r'[^\x09\x0A\x0D\x20-\x7E]', '', html)
-    print("Read file as ASCII (non-ASCII and non-printable characters stripped)")
+    # Decode as ASCII ignoring non-ASCII bytes
+    html = raw.decode("ascii", errors="ignore")
+    # Keep only printable ASCII (32-126) plus newlines, tabs, carriage return
+    html = re.sub(r'[^\x20-\x7E\x09\x0A\x0D]', ' ', html)
+    # Remove multiple consecutive spaces
+    html = re.sub(r' +', ' ', html)
+    print("Read file as ASCII and removed all special characters")
     # Remove everything from <head to </head>
     html = re.sub(r"<head[\s\S]*?</head>", "", html, flags=re.IGNORECASE | re.DOTALL)
     # Remove <p ...> opening tags entirely
@@ -107,10 +109,9 @@ def scan_and_clean_files_dirs(directory: str) -> None:
         print(f"Removed directory: {full_dir_path} (matched from {html_file})")
         extract_body(html_file,html_file)
  
-if name == "__main__":
-    
+if __name__ == "__main__":
+    folder = r'templates\triagemails'
+    print("Usage: python triage_html_dir.py <directory>")
     if len(sys.argv) == 2:
-        scan_and_clean_files_dirs(sys.argv[1])
-    else:
-        print("Usage: python remove_html_dir.py <directory>")
-        sys.exit(1)
+        folder = sys.argv[1]
+    scan_and_clean_files_dirs(folder)

@@ -1,0 +1,436 @@
+{
+  "Alertrouter: WARNING HighNBJobWaitCountbyClass is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460362C0000": {
+        "percent": "SLES12_AVX_LARGEMEM",
+        "server": "scto_e /ito/special/largememjobs/clg",
+        "path": "-",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460362C0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "6/2 08:06"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460362B0000": {
+        "percent": "SLES12_AVX_LARGEMEM",
+        "server": "scto_e /ito/special/largememjobs/clg",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460362B0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "6/2 05:06"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460362A0000": {
+        "percent": "SLES12_AVX_LARGEMEM",
+        "server": "scto_e /ito/special/largememjobs/clg",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460362A0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "6/2 02:06"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036280000": {
+        "percent": "SLES12_AVX_LARGEMEM",
+        "server": "scto_e /ito/special/largememjobs/clg",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036280000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "6/1 23:06"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:HighNBJobWaitCountbyClass",
+    "dashboard": "https://dashboard.to.intel.com/d/Q1T39mpWz/netbatch-high?var-pool=scto_e&var-class=SLES12_AVX_LARGEMEM",
+    "notes": "",
+    "info": ""
+  },
+  "Swapping Compute Special is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036290000": {
+        "percent": "14%",
+        "server": "tscyf05135510",
+        "path": "/hnfs/tsccfs12n11b/vol/ca_tood_8046/WILDCATLAKE-4P_0E_4IE-CPU-DIEJ/J0-Prio1-504344/8p2ucj/8p2ucj_0a/TICSUB_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036290000.html",
+        "notes": "-",
+        "users": "verjavec",
+        "datetime": "6/1 23:13"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036180000": {
+        "percent": "66%",
+        "server": "tscyf05223710",
+        "path": "/nfs/scto/proj/ret/ret_shared6/ret_users_kkothari/VGP-VTP/contour_deltas",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036180000.html",
+        "notes": "-",
+        "users": "kkothari",
+        "datetime": "6/1 01:53"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146035E80000": {
+        "percent": "63%",
+        "server": "tscyf05223710",
+        "path": "/nfs/scto/proj/ret/ret_shared6/ret_users_kkothari/VGP-VTP/contour_deltas",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146035E80000.html",
+        "notes": "-",
+        "users": "kkothari",
+        "datetime": "5/30 14:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F5FFC2E50000": {
+        "percent": "18%",
+        "server": "tscyf06041309",
+        "path": "/hnfs/tsccfs10n03a/vol/ca_tood_7541/CLEARWATERFOREST-BASEA/A-FR-504220/8pzgca/8pzgca_0a/LGU.C3_FF_33_EA6M_0ED1/MPC_48/setup_mpc",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F5FFC2E50000.html",
+        "notes": "-",
+        "users": "akaley",
+        "datetime": "4/14 08:20"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36570000": {
+        "percent": "88%",
+        "server": "tscyf05224906",
+        "path": "/hnfs/tsccfs10n03a/vol/ca_toop_8072/PANTHERLAKECPU-UDIEG/G-FR-503952/8pxmcg_5/8pxmcg_0b/MT0.C1_13_EB6X_9ED1/OPC1_ALT_15/setup_correction",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36570000.html",
+        "notes": "-",
+        "users": "otrahal",
+        "datetime": "4/13 13:55"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8010000": {
+        "percent": "27%",
+        "server": "tscyf05234303",
+        "path": "/hnfs/tsccfs12n10b/vol/ca_tood_8023/1X80CR/R-FR-504075/YLDLEFT/x80yldleft_cr00/CHKDFG1_11/setup_mzxor",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8010000.html",
+        "notes": "-",
+        "users": "tianzha1",
+        "datetime": "4/11 02:30"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:SwappingCompute",
+    "dashboard": "http://dashboard.to.intel.com/d/B3cydSkmk/node-exporter-all-nodes?orgId=1&var-node_short=tscyf05135510",
+    "notes": "",
+    "info": ""
+  },
+  "Swapping Compute General Batch is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036270000": {
+        "percent": "87%",
+        "server": "torka26ak1903",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036270000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "6/1 22:53"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F5FFC2E20000": {
+        "percent": "Error%",
+        "server": "torkb26as0705",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F5FFC2E20000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/14 07:04"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36670000": {
+        "percent": "Error%",
+        "server": "torkb18aj0708",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36670000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/14 01:33"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:SwappingCompute",
+    "dashboard": "http://dashboard.to.intel.com/d/B3cydSkmk/node-exporter-all-nodes?orgId=1&var-node_short=torka26ak1903",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING ito_vol_will_fill_in_x_days is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460361F0000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_torcfs02n10b_L(dde_mse2a 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700061460361F0000.html",
+        "notes": "tscinapp10,<br> tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "6/1 12:48"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8000000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs02n10b_L(barstage01 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8000000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "4/10 16:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C7EC0000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs02n10b_L(barstage01 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C7EC0000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "4/8 16:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36580000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n06b_L(dde_mse6a 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36580000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "4/13 14:33"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC365A0000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n06b_L(dde_mse6a 2 days),<br> aggr1_tsccfs02n10b_L(barstage01 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC365A0000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "4/13 16:48"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36540000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs02n10b_L(barstage01 2 days),<br> aggr2_torcfs02n06b_L(barstage01 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36540000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "4/13 10:48"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8190000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs02n10b_L(barstage01 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8190000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "4/13 10:33"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8030000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n06b_L(dde_mse7a 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8030000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "4/11 11:13"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:aggregate_or_volume_filling",
+    "dashboard": "https://dashboard.to.intel.com/d/dNioAj7nka/netapp-capacity-volume-by-aggr?orgId=1&from=now-2w&to=now&var-Cluster=torcfs02&var-Aggr=aggr2_torcfs02n06a_L&var-Volume=barstage_mediaflux",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING ttd_netapp_aggr_full is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036140000": {
+        "percent": "85.79%",
+        "server": "aggr1_torcfs02n12a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036140000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "5/31 22:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036030000": {
+        "percent": "85.99%",
+        "server": "aggr1_torcfs02n12a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006146036030000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "5/31 13:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36610000": {
+        "percent": "85.59%",
+        "server": "aggr1_tsccfs01n20a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36610000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/13 22:08"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8170000": {
+        "percent": "85.05%",
+        "server": "aggr1_tsccfs01n20a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8170000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/13 07:08"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=storage:netapp:netapp_dtp&#aggregate_full",
+    "dashboard": "https://dashboard.to.intel.com/d/HpU2ZCn7k/netapp-capacity-aggr-by-cluster?var-Cluster=&var-Aggr=aggr1_torcfs02n12a_S",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: CRITICAL": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000612DABB390000": {
+        "percent": "<a href=\"https://wiki.ith.intel.com/display/TTDOPS/RFC+for+Emergency+Rampdown+Alerts\">Emergency rampdown</a>",
+        "server": "tsccfs12n07a",
+        "path": "/hnfs/tsccfs12n07a/vol/ca_tood_7669/DIAMONDRAPIDSIMH1-MAINSTREAMDIEB/B-FR-504397/f300713/f300713/VCG.C3_33_EA6M_0EB1/OPC1_MZ_5/setup_correction",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000612DABB390000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "5/28 08:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000612DABB3B0000": {
+        "percent": "<a href=\"https://wiki.ith.intel.com/display/TTDOPS/RFC+for+Emergency+Rampdown+Alerts\">Emergency rampdown is firing</a>",
+        "server": "tsccfs12n07a",
+        "path": "/hnfs/tsccfs12n07a/vol/ca_tood_7669/DIAMONDRAPIDSIMH1-MAINSTREAMDIEB/B-FR-504397/f300713/f300713/VCG.C3_33_EA6M_0EB1/OPC1_MZ_5/setup_correction",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000612DABB3B0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "5/28 09:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000612DABB340000": {
+        "percent": "<a href=\"https://wiki.ith.intel.com/x/NwRTbw\">MLCWorkerNodeSwapping</a>",
+        "server": "-",
+        "path": "--",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000612DABB340000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "5/28 04:48"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C7FF0000": {
+        "percent": "<a href=\"http://tcswiki.intel.com/doku.php?id=alerts:rfc:MultipleClientsDownNetbatchClass\">MultipleClientsDownNetbatchClass</a>",
+        "server": "-",
+        "path": "SLES12_critical - orto_e<br>SLES12_critical - scto_e<br>SLES12_short - orto_e<br>SLES12_short - scto_e",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C7FF0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/10 11:47"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C7FC0000": {
+        "percent": "<a href=\"https://wiki.ith.intel.com/display/TTDOPS/RFC+for+Emergency+Rampdown+Alerts\">Emergency rampdown</a>",
+        "server": "tsccfs12n13b",
+        "path": "/hnfs/tsccfs12n13b/vol/ca_tood_8089/NOVALAKE-CPU-2P_0E-INT-DIEJ/J0-Prio1-503964/8py4cj_10/8py4cj_0a/DPR.C3_33_EA6M_0EA1/CHKOPC_MZ_10/setup_recipe_3",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C7FC0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/10 00:07"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8020000": {
+        "percent": "22022301727",
+        "server": "torirnr05 - MemoryExhaustedInfra and InfraNodeSwapUsage updatedDate: 2026-04-11 06:28:59.577",
+        "path": "<a href=https://hsdes.intel.com/resource/22022301727>https://hsdes.intel.com/resource/22022301727</a>",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8020000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/11 07:32"
+      }
+    },
+    "rfc": "https://wiki.ith.intel.com/display/TTDOPS/RFC+for+Emergency+Rampdown+Alerts",
+    "dashboard": "http://dashboard.to.intel.com/d/B3cydSkmk/node-exporter-all-nodes?orgId=1&var-node_short=torimlc03",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING Emergency rampdown is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36690000": {
+        "percent": "",
+        "server": "none",
+        "path": "/nfs/orto/proj/tapeout/development_gavinjos/flowgen/CHKOPC_MZ/setup_recipe_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36690000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/14 03:12"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36680000": {
+        "percent": "",
+        "server": "none",
+        "path": "/nfs/orto/proj/tapeout/development_gavinjos/flowgen/CHKOPC_MZ/setup_recipe_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36680000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/14 02:12"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36660000": {
+        "percent": "",
+        "server": "none",
+        "path": "/nfs/orto/proj/tapeout/development_gavinjos/flowgen/CHKOPC_MZ/setup_recipe_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70005F4DC36660000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/14 01:12"
+      }
+    },
+    "rfc": "https://wiki.ith.intel.com/display/TTDOPS/RFC+for+Emergency+Rampdown+Alerts",
+    "dashboard": "",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING ito_aggr_will_fill_in_x_days is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C80F0000": {
+        "percent": "2 day",
+        "server": "aggr1_tsccfs01n20a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C80F0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/12 00:53"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C80E0000": {
+        "percent": "2 day",
+        "server": "aggr1_tsccfs02n17a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C80E0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/12 07:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8090000": {
+        "percent": "2 day",
+        "server": "aggr1_tsccfs10n03a_S",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700055080C8090000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "4/12 23:03"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:aggregate_or_volume_filling",
+    "dashboard": "https://dashboard.to.intel.com/d/HpU2ZCn7k/netapp-capacity-aggr-by-cluster?var-Cluster=tsccfs01&var-Aggr=aggr1_tsccfs01n20a_S",
+    "notes": "",
+    "info": ""
+  }
+}
