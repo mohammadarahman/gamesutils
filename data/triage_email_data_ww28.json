@@ -1,0 +1,726 @@
+{
+  "Alertrouter: WARNING ito_vol_will_fill_in_x_days is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8B0000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8B0000.html",
+        "notes": "tscinapp10\ntscinapp10\nNo Action for MediaFlux",
+        "users": "-",
+        "datetime": "7/7 12:13"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8F0000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n21a_S(development_imompc 2 days)",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8F0000.html",
+        "notes": "tscinapp10\ndev server",
+        "users": "-",
+        "datetime": "7/7 18:48"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E900000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n21a_S(development_imompc 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E900000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/7 21:48"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E910000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n21a_S(development_imompc 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E910000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/8 01:08"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E930000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E930000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/8 12:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F20000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n15b_S(cascal_storage 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F20000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/9 08:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EB0000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n15b_S(cascal_storage 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EB0000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/9 05:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2E90000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n06b_L(dde_mse6a 2 days)",
+        "path": "-",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2E90000.html",
+        "notes": "tscinapp10\nhttps://tapeout.intel.com/its/#/ticket/22022857322",
+        "users": "-",
+        "datetime": "7/8 19:58"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F70000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n15b_S(cascal_storage 2 days)",
+        "path": "-",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F70000.html",
+        "notes": "tscinapp10\nhttps://tapeout.intel.com/its/#/ticket/22022857329",
+        "users": "-",
+        "datetime": "7/9 12:03"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F90000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n15b_S(cascal_storage 2 days),<br> aggr1_tsccfs17n01b_H(hpc_container_images 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F90000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/9 13:03"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F80000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n15b_S(cascal_storage 2 days),<br> aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F80000.html",
+        "notes": "tscinapp10,<br> tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/9 12:18"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3070000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3070000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/10 12:18"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006300D490B0000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n21a_S(development_imompc 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006300D490B0000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/10 22:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062FF138C70000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n20a_S(development_cjweinhe 2 days),<br> aggr1_tsccfs01n21a_S(development_imompc 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062FF138C70000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/10 19:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062FF138C60000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n20a_S(development_cjweinhe 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062FF138C60000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/10 18:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C30A0000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n20a_S(development_cjweinhe 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C30A0000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/10 15:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000630623E810000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000630623E810000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/11 12:18"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006300D490C0000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n21a_S(development_imompc 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006300D490C0000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/11 01:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000630EF3D0F0000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000630EF3D0F0000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/12 12:18"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF60000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n10b_L(dde_mse2a 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF60000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/13 10:23"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFC0000": {
+        "percent": "-%",
+        "server": "aggr2_torcfs02n06a_L(barstage_mediaflux 2 days),<br> aggr2_torcfs02n10b_L(dde_mse2a 2 days),<br> aggr2_tsccfs13n02b_L(barstage_mediaflux 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFC0000.html",
+        "notes": "tscinapp10,<br> tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/13 12:23"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB010000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n20a_S(development_cjweinhe 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB010000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/13 17:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB020000": {
+        "percent": "-%",
+        "server": "aggr1_torcfs02n06b_L(dde_mse6a 2 days),<br> aggr1_tsccfs01n20a_S(development_cjweinhe 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB020000.html",
+        "notes": "tscinapp10,<br> tscinapp10",
+        "users": "-",
+        "datetime": "7/13 18:28"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB030000": {
+        "percent": "-%",
+        "server": "aggr1_tsccfs01n20a_S(development_cjweinhe 2 days)",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB030000.html",
+        "notes": "tscinapp10",
+        "users": "-",
+        "datetime": "7/13 21:28"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:aggregate_or_volume_filling",
+    "dashboard": "https://dashboard.to.intel.com/d/dNioAj7nka/netapp-capacity-volume-by-aggr?orgId=1&from=now-2w&to=now&var-Cluster=torcfs02&var-Aggr=aggr2_torcfs02n06a_L&var-Volume=barstage_mediaflux",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING NetbatchEnqueueQOS is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8D0000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8D0000.html",
+        "notes": "ticket filed : 22022842688",
+        "users": "-",
+        "datetime": "7/7 15:09"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:NetbatchQOS",
+    "dashboard": "http://dashboard.to.intel.com/d/000000023/qos-netbatch",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: CRITICAL": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8C0000": {
+        "percent": "<a href=\"http://tcswiki.intel.com/doku.php?id=alerts:rfc:MultipleClientsDownNetbatchClass\">MultipleClientsDownNetbatchClass</a>",
+        "server": "-",
+        "path": "SLES15_short - scto_e",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8C0000.html",
+        "notes": "no action needed as it is already taken care (see email from Jimmy)",
+        "users": "-",
+        "datetime": "7/7 14:38"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8E0000": {
+        "percent": "<a href=\"http://tcswiki.intel.com/doku.php?id=alerts:rfc:MultipleClientsDownNetbatchClass\">MultipleClientsDownNetbatchClass</a>",
+        "server": "-",
+        "path": "SLES15_short - scto_e",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E8E0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/7 17:38"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E940000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "<a href=https://hsdes.intel.com/resource/22022849204>https://hsdes.intel.com/resource/22022849204</a>",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E940000.html",
+        "notes": "Patil shilpa owns it",
+        "users": "-",
+        "datetime": "7/8 14:03"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF80000": {
+        "percent": "14028239277",
+        "server": "1HB4EA product TSV layer missing from graphics updatedDate: 2026-07-13 10:27:27.287 ------------------------------",
+        "path": "<a href=https://hsdes.intel.com/resource/14028239277>https://hsdes.intel.com/resource/14028239277</a>",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF80000.html",
+        "notes": "action taken . issue closed. ",
+        "users": "-",
+        "datetime": "7/13 10:31"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF70000": {
+        "percent": "14028239277",
+        "server": "1HB4EA product TSV layer missing from graphics updatedDate: 2026-07-13 10:27:27.287 ------------------------------",
+        "path": "<a href=https://hsdes.intel.com/resource/14028239277>https://hsdes.intel.com/resource/14028239277</a>",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF70000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/13 10:31"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF90000": {
+        "percent": "14028239277",
+        "server": "1HB4EA product TSV layer missing from graphics updatedDate: 2026-07-13 10:47:36.86 ------------------------------",
+        "path": "<a href=https://hsdes.intel.com/resource/14028239277>https://hsdes.intel.com/resource/14028239277</a>",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAF90000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/13 10:51"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFA0000": {
+        "percent": "14028239277",
+        "server": "1HB4EA product TSV layer missing from graphics updatedDate: 2026-07-13 10:47:36.86 ------------------------------",
+        "path": "<a href=https://hsdes.intel.com/resource/14028239277>https://hsdes.intel.com/resource/14028239277</a>",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFA0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/13 10:51"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFD0000": {
+        "percent": "14028239277",
+        "server": "1HB4EA product TSV layer missing from graphics updatedDate: 2026-07-13 12:16:50.137 ------------------------------",
+        "path": "<a href=https://hsdes.intel.com/resource/14028239277>https://hsdes.intel.com/resource/14028239277</a>",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFD0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/13 12:26"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFB0000": {
+        "percent": "14028239277",
+        "server": "1HB4EA product TSV layer missing from graphics updatedDate: 2026-07-13 12:08:38.787 ------------------------------",
+        "path": "<a href=https://hsdes.intel.com/resource/14028239277>https://hsdes.intel.com/resource/14028239277</a>",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFB0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/13 12:12"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB050000": {
+        "percent": "<a href=\"http://tcswiki.intel.com/doku.php?id=alerts:rfc:MultipleClientsDownNetbatchClass\">MultipleClientsDownNetbatchClass</a>",
+        "server": "-",
+        "path": "SLES15_short - scto_e",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB050000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/14 10:25"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:MultipleClientsDownNetbatchClass",
+    "dashboard": "http://dashboard.to.intel.com/d/xWPkUydmk/netbatch-locked-and-disconnected-hosts?orgId=1&var-env=prod&var-pool=scto_e&var-class=SLES15_short",
+    "notes": "",
+    "info": ""
+  },
+  "Swapping Compute General Batch is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E950000": {
+        "percent": "43%",
+        "server": "tscna07034305",
+        "path": "-",
+        "status": "ITS",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D7000629969E950000.html",
+        "notes": "checked with the person who has most job running. ",
+        "users": "-",
+        "datetime": "7/8 15:38"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFE0000": {
+        "percent": "Error%",
+        "server": "torkb26as0706",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFE0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/13 14:18"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB000000": {
+        "percent": "29%",
+        "server": "torka37ax0709",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB000000.html",
+        "notes": "no production job",
+        "users": "-",
+        "datetime": "7/13 15:45"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFF0000": {
+        "percent": "34%",
+        "server": "torka26ak0107",
+        "path": "-",
+        "status": "email",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBAFF0000.html",
+        "notes": "email sent out. ",
+        "users": "-",
+        "datetime": "7/13 15:44"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB040000": {
+        "percent": "Error%",
+        "server": "torkb10ar0710",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D70006315EBB040000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/14 10:13"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:SwappingCompute",
+    "dashboard": "http://dashboard.to.intel.com/d/B3cydSkmk/node-exporter-all-nodes?orgId=1&var-node_short=tscna07034305",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING NetbatchHistoryQOS is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F30000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F30000.html",
+        "notes": "per rfc. it is supposed to be handled by TCS. ",
+        "users": "-",
+        "datetime": "7/9 08:53"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F40000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F40000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 09:08"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EE0000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EE0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 07:38"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EF0000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EF0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 07:53"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F00000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F00000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 08:09"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F10000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F10000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 08:23"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2ED0000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2ED0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 06:36"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EC0000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EC0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 06:18"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EA0000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2EA0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 05:04"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F60000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F60000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 09:38"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F50000": {
+        "percent": "-%",
+        "server": "-",
+        "path": "-",
+        "status": "NA",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2F50000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 09:23"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:NetbatchHistQOS",
+    "dashboard": "http://dashboard.to.intel.com/d/000000023/qos-netbatch",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING Emergency rampdown is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FA0000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14b/vol/ca_tooe_8102/adc_mz_qual/adc_mz_qual/RECL1_2/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FA0000.html",
+        "notes": "email sent out to Gavin",
+        "users": "-",
+        "datetime": "7/9 15:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FB0000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14a/vol/ca_tooe_8098/adc_mz_qual/adc_mz_qual/RECL1_4/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FB0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 16:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3030000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs10n06a/vol/ca_tooe_8153/adc_mz_qual/adc_mz_qual/RECL1_5/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3030000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 22:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3010000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14b/vol/ca_tooe_8102/adc_mz_qual/adc_mz_qual/RECL1_2/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3010000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 21:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3000000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14b/vol/ca_tooe_8102/adc_mz_qual/adc_mz_qual/RECL1_2/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "email",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3000000.html",
+        "notes": "gavin testing.",
+        "users": "-",
+        "datetime": "7/9 20:06"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FF0000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14a/vol/ca_tooe_8098/adc_mz_qual/adc_mz_qual/RECL1_4/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FF0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 19:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FD0000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14a/vol/ca_tooe_8098/adc_mz_qual/adc_mz_qual/RECL1_4/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FD0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 18:06"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FC0000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs12n14b/vol/ca_tooe_8102/adc_mz_qual/adc_mz_qual/RECL1_2/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FC0000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 17:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3060000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs08n02a/vol/ca_tooe_7865/adc_mz_qual/adc_mz_qual/RECL1_6/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3060000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/10 01:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3050000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs08n03a/vol/ca_tooe_7889/adc_mz_qual/adc_mz_qual/RECL1_3/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3050000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/10 00:05"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3040000": {
+        "percent": "",
+        "server": "none",
+        "path": "/hnfs/tsccfs02n17b/vol/ca_tooe_7917/adc_mz_qual/adc_mz_qual/RECL1/x80rorecl1_dot1_b00/VA2.C1_13_EB6X_ZEC1/ADC_MZ_RWK1_1/setup_recipe_1",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3040000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/9 23:05"
+      }
+    },
+    "rfc": "https://wiki.ith.intel.com/display/TTDOPS/RFC+for+Emergency+Rampdown+Alerts",
+    "dashboard": "",
+    "notes": "",
+    "info": ""
+  },
+  "Swapping Compute Special is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3020000": {
+        "percent": "33%",
+        "server": "toryb26aq1310",
+        "path": "/nfs/orto/proj/ret/ret_users_jreiss/1281/m0h/recipe_dev/02_x81rb_recipe_dglo/zz_assurance/ww28",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3020000.html",
+        "notes": "-",
+        "users": "jreiss",
+        "datetime": "7/9 21:43"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FE0000": {
+        "percent": "19%",
+        "server": "toryb26aq1910",
+        "path": "/nfs/orto/proj/ret/ret_users_jreiss/1281/m0h/recipe_dev/02_x81rb_recipe_dglo/zz_assurance/ww28",
+        "status": "Dup",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C2FE0000.html",
+        "notes": "-",
+        "users": "jreiss",
+        "datetime": "7/9 19:03"
+      },
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3080000": {
+        "percent": "53%",
+        "server": "toryb26aq1310",
+        "path": "/nfs/orto/proj/ret/ret_users_jreiss/1281/m0h/recipe_dev/02_x81rb_recipe_dglo/zz_assurance/ww28",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3080000.html",
+        "notes": "production job completed. ",
+        "users": "jreiss",
+        "datetime": "7/10 13:43"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:SwappingCompute",
+    "dashboard": "http://dashboard.to.intel.com/d/B3cydSkmk/node-exporter-all-nodes?orgId=1&var-node_short=toryb26aq1310",
+    "notes": "",
+    "info": ""
+  },
+  "Alertrouter: WARNING HighNBJobWaitCountbyClass is firing": {
+    "ind_dats": {
+      "000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3090000": {
+        "percent": "SLES15_LARGEMEM",
+        "server": "scto_e /ito/special/largememjobs/clg",
+        "path": "-",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/000000009E960C89EEB4264591AD04EF8796DAF107000F951060F0298B4C998538D29047B2D7000550807E5700000F951060F0298B4C998538D29047B2D700062EA6C3090000.html",
+        "notes": "-",
+        "users": "-",
+        "datetime": "7/10 14:35"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:HighNBJobWaitCountbyClass",
+    "dashboard": "https://dashboard.to.intel.com/d/Q1T39mpWz/netbatch-high?var-pool=scto_e&var-class=SLES15_LARGEMEM",
+    "notes": "",
+    "info": ""
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "alertrouter: warning highnbjobwaitcountbyclass is firing": {
+    "ind_dats": {
+      "20260519_230340_WARNING_HighNBJobWaitCountbyClass_is_firing": {
+        "info1": "2 orto_e",
+        "info2": "2 hours",
+        "path": "/ito/special/largememjobs/clg",
+        "status": "",
+        "link": "http://localhost:5000/triagemails/20260519_230340_WARNING_HighNBJobWaitCountbyClass_is_firing.html",
+        "notes": "",
+        "users": "-",
+        "datetime": "19MAY 23:03:00"
+      }
+    },
+    "rfc": "http://tcswiki.intel.com/doku.php?id=alerts:rfc:HighNBJobWaitCountbyClass",
+    "dashboard": "https://dashboard.to.intel.com/d/Q1T39mpWz/netbatch-high?var-pool=orto_e&var-class=SLES15_CIT_LARGEMEM",
+    "notes": "",
+    "info": ""
+  }
+}

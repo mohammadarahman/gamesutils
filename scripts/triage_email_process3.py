@@ -6,7 +6,7 @@ from triage_email_rewrite import *
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_JSON = os.path.join(SCRIPT_DIR, "triage_email_data.json")
+OUTPUT_JSON = os.path.join(SCRIPT_DIR, "..", "data", "triage_email_data.json")
 #OUTPUT_HTML = os.path.join(SCRIPT_DIR, "triage_email_dashboard.html")
 soup = None  # Global HTML element, updated per file
 origsubject = None  # Cache original subject for parsers
@@ -390,13 +390,44 @@ def parse_with_regex_lists():
     Only searches in <p> elements like getdata_p().
     """
     dprint(f"[PARSER] parse_with_regex_lists - default")
-    info1_regexes = [r'description: (\d+) waiting netbatch jobs in (\S+) in qslot \S+ and class SLES15_LARGEMEM for last \d+ \S+',r'Aggregate (\S+) is at \S+ full',r'\S+ volume on (\S+) is \S+ full',r'average response time of (\S+ \S+)', r'summary:\s*(\S+) from (\S+) will fill in',r'value of (\S+ \S+)']
-    info2_regexes = [r'description: \d+ waiting netbatch jobs in \S+ in qslot \S+ and class SLES15_LARGEMEM for last (\d+ \S+)',r'(\S+) will fill in less than (\d+ days)',r'Aggregate \S+ is at (\S+) full',r'(\S+) volume on \S+ is (\S+) full', r'Slow average AD response of (\d+)[\.\d]* seconds in to',r'nbstatus jobs --target (\S+) is high',r'sname\s*: (\S+)', r'Feature: (\S+)']
-    path_regexes = [r'description: \d+ waiting netbatch jobs in \S+ in qslot (\S+) and class SLES15_LARGEMEM for last \d+ \S+',r'job_path:\s*(\S+)']
+    info1_regexes = [
+        r'description: Time to do nbstatus --hist (\S+) is high, with a value of \d+\.?\d* secs',
+        r'client_number:\s*(\S+)',
+        r'description: More than (\S+) of \S+\s+in pool \S+ are not available',
+        r'description: (\d+) netbatch jobs waiting in queue \S+ for last ',
+        r'description: \S+: (\S+) will fill in less than \d+ \S+.',
+        r'description: (\d+) waiting netbatch jobs in (\S+) in qslot \S+ and class \S+ for last \d+ \S+',
+        r'Aggregate (\S+) is at \S+ full',
+        r'\S+ volume on (\S+) is \S+ full',
+        r'average response time of (\S+ \S+)',
+        r'summary:\s*(\S+) from (\S+) will fill in',
+        r'value of (\S+ \S+)'
+    ]
+    info2_regexes = [
+        r'description: Time to do nbjob run --target (\S+)',
+        r'description: Time to do nbstatus --hist \S+ is high, with a value of (\d+)\.?\d* secs',
+        r'pool_name:\s*(\S+)',
+        r'description: More than \S+ of \S+\s+in pool (\S+) are not available',
+        r'description: \d+ netbatch jobs waiting in queue (\S+) for last ',
+        r'description: \S+: \S+ will fill in less than (\d+ \S+).',
+        r'description: \d+ waiting netbatch jobs in \S+ in qslot \S+ and class \S+ for last (\d+ \S+)',
+        r'(\S+) will fill in less than (\d+ days)',
+        r'Aggregate \S+ is at (\S+) full',
+        r'(\S+) volume on \S+ is (\S+) full',
+        r'Slow average AD response of (\d+)[\.\d]* seconds in to',
+        r'nbstatus jobs --target (\S+) is high',
+        r'sname\s*: (\S+)',
+        r'Feature: (\S+)'
+    ]
+    path_regexes = [
+        r'description: \d+ waiting netbatch jobs in \S+ in qslot (\S+) and class \S+ for last \d+ \S+',
+        r'job_path:\s*(\S+)'
+    ]
     info1_result = ""
     # Try each regex in info1_regexes, stop at first match
     for rgx in info1_regexes:
         result = getdata_p(rgx, all=True)  # all=False stops at first match
+        #print(f"[DEBUG] Trying regex '{rgx}' got result: {result}")
         if result:
             info1_result = result
             break
@@ -551,12 +582,57 @@ def build_combined_data(allfiles):
         if not combined_data[subject]["notes"]:
             combined_data[subject]["notes"] = ""  # Notes extracted from HTML if available
     return combined_data
+
+def remove_gurbage_data(combined_data):
+    """
+    Remove items from combined_data that contain strings from the garbage list.
+    Checks if any garbage string is contained in the subject (case-insensitive).
+    
+    Args:
+        combined_data: Dictionary with subjects as keys
+    
+    Returns:
+        Cleaned combined_data with matching subjects removed
+    """
+    # List of strings to match for removal
+    garbage_strings = [
+        "oncall transition notification",
+        "Your home directory"
+    ]
+    
+    # Convert garbage strings to lowercase for case-insensitive matching
+    garbage_strings_lower = [s.lower() for s in garbage_strings]
+    
+    # Find subjects to remove
+    subjects_to_remove = []
+    for subject in combined_data.keys():
+        # Skip None or non-string subjects
+        if subject is None or not isinstance(subject, str):
+            dprint(f"[CLEANUP] Skipping invalid subject: {subject} (type: {type(subject).__name__})")
+            continue
+        
+        subject_lower = subject.lower()
+        for garbage_str in garbage_strings_lower:
+            if garbage_str in subject_lower:
+                subjects_to_remove.append(subject)
+                dprint(f"[CLEANUP] Removing subject: '{subject}' (matched: '{garbage_str}')")
+                break  # No need to check other garbage strings for this subject
+    
+    # Remove the marked subjects
+    for subject in subjects_to_remove:
+        del combined_data[subject]
+    
+    if subjects_to_remove:
+        dprint(f"[CLEANUP] Removed {len(subjects_to_remove)} garbage subjects")
+    
+    return combined_data
+
 def main():
     allfiles = get_files_from_text()
     dprint(f"[INFO] Starting processing of {len(allfiles)} files...")
     
     combined_data = build_combined_data(allfiles)
-    
+    combined_data = remove_gurbage_data(combined_data) 
     dprint(f"[INFO] Total subjects processed: {len(combined_data)}")
     save_json(combined_data, OUTPUT_JSON)
     

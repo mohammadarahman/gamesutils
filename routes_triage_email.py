@@ -6,7 +6,7 @@ import os
 # Assuming the data file is in the same directory as the app
 DATA_FILE = "triage_email_data.json"
 DATA_PREFIX = "triage_email_data"
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 
 
 def _list_data_files():

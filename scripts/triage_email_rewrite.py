@@ -5,7 +5,7 @@ Extract MsoPlainText and MsoNormal content, find Subject line, and generate clea
 """
 
 listoffiles='c:\\temp\\email.txt'
-HTML_DIR="templates/triagemails"
+HTML_DIR="../templates/triagemails"
 template_string = r'''<!DOCTYPE html>
     <html lang="en">
     <head>
